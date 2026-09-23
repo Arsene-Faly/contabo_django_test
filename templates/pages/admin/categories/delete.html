@@ -1,0 +1,54 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Supprimer la catégorie - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Supprimer la catégorie</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<div class="admin-content">
+
+    <div class="confirm-box">
+
+        <div class="icon">⚠️</div>
+
+        <h2>Confirmer la suppression</h2>
+
+        <p>
+            Êtes-vous sûr de vouloir supprimer la catégorie
+            <span class="item-name">« {{ category.name }} »</span> ?
+            {{ category.description }}
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="confirm-actions">
+
+                <button type="submit" class="btn btn-danger">
+                    Oui, supprimer
+                </button>
+
+                <a href="{% url 'category_index' %}" class="btn btn-outline">
+                    Annuler
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Nouvelle catégorie - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Detail catégorie</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+
+<div class="admin-content">
+
+    <div class="panel" style="max-width:600px;">
+
+        <h2>Informations de la catégorie</h2>
+
+        {{ category.id }}
+        {{ category.name }}
+        {{ category.description }}
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

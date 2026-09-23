@@ -1,0 +1,87 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Accueil - MonBlog
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container">
+        <h1>Bienvenue sur MonBlog</h1>
+
+    <p>
+        Un espace pour partager des idées, des astuces et des histoires
+        sur le développement web, la technologie et bien plus encore.
+    </p>
+
+    <a href="{% url 'blog' %}" class="btn btn-primary">
+        Découvrir le blog
+    </a>
+</div>
+```
+
+</section>
+
+<section>
+    <div class="container">
+
+```
+    <h2 class="section-title">
+        Pourquoi MonBlog ?
+    </h2>
+
+    <p class="section-subtitle">
+        Des contenus utiles, écrits simplement, pour vous aider à progresser.
+    </p>
+
+    <div class="grid-3">
+
+        <div class="card">
+            <div class="icon">📝</div>
+
+            <h3>
+                Articles de qualité
+            </h3>
+
+            <p>
+                Des sujets choisis et rédigés avec soin
+                pour rester clairs et pratiques.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">📂</div>
+
+            <h3>
+                Catégories variées
+            </h3>
+
+            <p>
+                Développement, design, outils, actualités :
+                trouvez ce qui vous intéresse.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">💬</div>
+
+            <h3>
+                Communauté active
+            </h3>
+
+            <p>
+                Inscrivez-vous pour suivre les nouveautés
+                et échanger avec d'autres lecteurs.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

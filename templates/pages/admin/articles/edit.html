@@ -1,0 +1,182 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Modifier l'article - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Modifier l'article</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<div class="admin-content">
+
+    <div class="panel" style="max-width:760px;">
+
+        <h2>Informations de l'article</h2>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="title">Titre de l'article</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value="Les bases de Flask pour débutants"
+                    required
+                >
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Catégorie
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="developpement" selected>
+                            Développement
+                        </option>
+
+                        <option value="design">
+                            Design
+                        </option>
+
+                        <option value="outils">
+                            Outils
+                        </option>
+
+                        <option value="bdd">
+                            Base de données
+                        </option>
+
+                        <option value="actualites">
+                            Actualités
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Statut
+                    </label>
+
+                    <select
+                        id="status"
+                        name="status"
+                        required
+                    >
+
+                        <option value="brouillon">
+                            Brouillon
+                        </option>
+
+                        <option value="publie" selected>
+                            Publié
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="excerpt">
+                    Résumé
+                </label>
+
+                <textarea
+                    id="excerpt"
+                    name="excerpt"
+                >Découvrez comment démarrer un projet web avec Flask en quelques étapes simples.</textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="content">
+                    Contenu
+                </label>
+
+                <textarea
+                    id="content"
+                    name="content"
+                    style="min-height:220px;"
+                    required
+                >Flask est un micro-framework Python très apprécié pour sa simplicité et sa flexibilité...</textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="cover">
+                    Image de couverture
+                </label>
+
+                <input
+                    type="file"
+                    id="cover"
+                    name="cover"
+                >
+
+                <p class="helper-text">
+                    Laissez vide pour conserver l'image actuelle.
+                </p>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Mettre à jour
+                </button>
+
+                <a
+                    href="{% url 'article_index' %}"
+                    class="btn btn-outline"
+                >
+                    Annuler
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

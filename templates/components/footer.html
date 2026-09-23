@@ -1,0 +1,72 @@
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Présentation -->
+            <div>
+                <h4>MonBlog</h4>
+                <p>
+                    Votre source d'informations sur le développement web
+                    et la technologie.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h4>Navigation</h4>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'services' %}">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            À propos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'blog' %}">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Compte -->
+            <div>
+                <h4>Compte</h4>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'login' %}">
+                            Connexion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'register' %}">
+                            Inscription
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 MonBlog. Tous droits réservés.
+        </div>
+
+    </div>
+</footer>

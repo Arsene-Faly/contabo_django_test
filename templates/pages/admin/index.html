@@ -1,0 +1,139 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Tableau de bord - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+<div class="admin-topbar">
+    <h1>Tableau de bord</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<div class="admin-content">
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">📄</div>
+            <div class="stat-label">Articles</div>
+            <div class="stat-value">6</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🗂️</div>
+            <div class="stat-label">Catégories</div>
+            <div class="stat-value">5</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-label">Utilisateurs</div>
+            <div class="stat-value">18</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">👁️</div>
+            <div class="stat-label">Vues ce mois</div>
+            <div class="stat-value">1 240</div>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <h2>Accès rapide</h2>
+
+        <div class="quick-links">
+
+            <a href="{% url 'article_create' %}">
+                ➕ Ajouter un article
+            </a>
+
+            <a href="{% url 'article_index' %}">
+                📄 Gérer les articles
+            </a>
+
+            <a href="{% url 'category_create' %}">
+                ➕ Ajouter une catégorie
+            </a>
+
+            <a href="{% url 'category_index' %}">
+                🗂️ Gérer les catégories
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <h2>Derniers articles</h2>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Catégorie</th>
+                        <th>Statut</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Les bases de Flask pour débutants</td>
+                        <td>Développement</td>
+                        <td>
+                            <span class="badge badge-green">
+                                Publié
+                            </span>
+                        </td>
+                        <td>12/08/2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Créer une interface simple et efficace</td>
+                        <td>Design</td>
+                        <td>
+                            <span class="badge badge-green">
+                                Publié
+                            </span>
+                        </td>
+                        <td>05/08/2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>5 outils indispensables pour développeurs</td>
+                        <td>Outils</td>
+                        <td>
+                            <span class="badge badge-gray">
+                                Brouillon
+                            </span>
+                        </td>
+                        <td>28/07/2026</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

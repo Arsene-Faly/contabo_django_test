@@ -1,0 +1,87 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Catégories - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Catégories</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<div class="admin-content">
+
+    <div class="page-header">
+        <h2>Liste des catégories</h2>
+
+        <a href="{% url 'category_create' %}" class="btn btn-primary">
+            ➕ Nouvelle catégorie
+        </a>
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Articles</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for category in categories %}
+                    <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                    <td>2</td>
+
+                    <td class="actions-cell">
+                        <a
+                            href="{% url 'category_detail' category.id %}"
+                            class="btn btn-outline btn-sm"
+                        >
+                            Voir
+                        </a>
+                        <a
+                            href="{% url 'category_edit' category.id %}"
+                            class="btn btn-outline btn-sm"
+                        >
+                            Modifier
+                        </a>
+
+                        <a
+                            href="{% url 'category_delete' category.id %}"
+                            class="btn btn-danger btn-sm"
+                        >
+                            Supprimer
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                    <p>Aucun categories</p>
+                {% endfor %}
+                
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

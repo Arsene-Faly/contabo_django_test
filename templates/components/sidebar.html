@@ -1,0 +1,55 @@
+<aside class="sidebar">
+
+<a href="{% url 'admin_dashboard' %}" class="logo">
+    MonBlog Admin
+</a>
+
+<nav>
+
+    <div class="nav-section">Général</div>
+
+    <a href="{% url 'admin_dashboard' %}"
+       class="nav-link {% if page == 'dashboard' %}active{% endif %}">
+        📊 Tableau de bord
+    </a>
+
+
+    <div class="nav-section">Articles</div>
+
+    <a href="{% url 'article_index' %}"
+       class="nav-link {% if page == 'article' %}active{% endif %}">
+        📄 Liste des articles
+    </a>
+
+    <a href="{% url 'article_create' %}"
+       class="nav-link {% if page == 'article' %}active{% endif %}">
+        ➕ Nouvel article
+    </a>
+
+
+    <div class="nav-section">Catégories</div>
+
+    <a href="{% url 'category_index' %}"
+       class="nav-link {% if page == 'category' %}active{% endif %}">
+        🗂️ Liste des catégories
+    </a>
+
+    <a href="{% url 'category_create' %}"
+       class="nav-link {% if page == 'category' %}active{% endif %}">
+        ➕ Nouvelle catégorie
+    </a>
+
+
+    <div class="nav-section">Compte</div>
+
+    <a href="{% url 'home' %}" class="nav-link">
+        🌐 Voir le site
+    </a>
+
+    <a href="{% url 'login' %}" class="nav-link">
+        🚪 Déconnexion
+    </a>
+
+</nav>
+
+</aside>

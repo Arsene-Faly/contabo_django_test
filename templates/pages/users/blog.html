@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Blog - MonBlog
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container">
+        <h1>Le Blog</h1>
+
+    <p>
+        Retrouvez tous nos articles récents sur le développement
+        et la technologie.
+    </p>
+</div>
+
+</section>
+
+<section>
+    <div class="container">
+
+    <div class="blog-grid">
+        {% for article in articles %}
+            <a href="{% url 'blog_detail' %}" class="blog-card">
+            {% if article.image %}
+                <img src="{{article.image.url}}" width="200px" alt="">
+            {% else %}
+            Tsisy sary
+            {% endif %}
+
+            <div class="content">
+                <span class="category">
+                    {{ article.category.name }}
+                </span>
+
+                <h3>
+                    {{ article.titre }}
+                </h3>
+
+                <p class="excerpt">
+                    Découvrez comment démarrer un projet web avec Flask
+                    en quelques étapes simples.
+                </p>
+
+                <p class="meta">
+                    Par Admin · 12 Août 2026
+                </p>
+            </div>
+        </a>
+        {% endfor %}
+        
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

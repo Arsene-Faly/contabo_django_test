@@ -1,0 +1,100 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Les bases de Flask pour débutants - MonBlog
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+
+    <div class="article-header">
+
+        <span class="category">
+            Développement
+        </span>
+
+        <h1>
+            Les bases de Flask pour débutants
+        </h1>
+
+        <p class="meta">
+            Par Admin · 12 Août 2026 · 5 min de lecture
+        </p>
+
+    </div>
+
+
+    <div class="article-cover">
+        📘
+    </div>
+
+
+    <div class="article-body">
+
+        <p>
+            Flask est un micro-framework Python très apprécié pour
+            sa simplicité et sa flexibilité. Il permet de créer
+            rapidement des applications web sans imposer une
+            structure trop rigide, ce qui en fait un excellent choix
+            pour débuter le développement web côté serveur.
+        </p>
+
+
+        <h2>
+            Installation
+        </h2>
+
+        <p>
+            Avant de commencer, il est recommandé de créer un
+            environnement virtuel puis d'installer Flask via pip.
+            Cela permet de garder les dépendances de votre projet
+            isolées du reste du système.
+        </p>
+
+
+        <h2>
+            Créer sa première route
+        </h2>
+
+        <p>
+            Une application Flask repose sur la notion de routes :
+            chaque route correspond à une URL et à une fonction
+            Python qui définit ce qui doit être renvoyé lorsque
+            cette URL est visitée. C'est le point de départ de
+            toute application.
+        </p>
+
+
+        <h2>
+            Les templates
+        </h2>
+
+        <p>
+            Flask utilise le moteur de templates Jinja2 pour
+            générer du HTML dynamique. Cela permet de séparer
+            la logique métier de la présentation, et de réutiliser
+            des blocs communs comme l'en-tête ou le pied de page
+            entre plusieurs pages.
+        </p>
+
+
+        <h2>
+            Pour aller plus loin
+        </h2>
+
+        <p>
+            Une fois les bases maîtrisées, il devient possible
+            d'ajouter une base de données, une gestion des
+            utilisateurs ou encore un espace d'administration,
+            comme celui utilisé pour gérer les articles de ce blog.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Articles - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Articles</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+
+<div class="admin-content">
+
+    <div class="page-header">
+
+        <h2>Liste des articles</h2>
+
+        <a href="{% url 'article_create' %}" class="btn btn-primary">
+            ➕ Nouvel article
+        </a>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>Catégorie</th>
+                    <th>Statut</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for article in articles %}
+                    <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ article.titre }}</td>
+                    <td>Categorie : {{ article.category.name }}</td>
+                    <td>
+                        <span class="badge badge-green">
+                            {{ article.status }}
+                        </span>
+                    </td>
+                    <td>
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}" width="50px" alt="sary"></td>
+                        {% else %}
+                            Tsisy sary
+                        {% endif %}
+                        
+                    <td class="actions-cell">
+                        <a
+                            href="{% url 'article_detail' article.id %}"
+                            class="btn btn-outline btn-sm"
+                        >
+                            Voir
+                        </a>
+
+                        <a
+                            href="{% url 'article_edit' 1 %}"
+                            class="btn btn-outline btn-sm"
+                        >
+                            Modifier
+                        </a>
+
+                        <a
+                            href="{% url 'article_delete' 1 %}"
+                            class="btn btn-danger btn-sm"
+                        >
+                            Supprimer
+                        </a>
+
+                    </td>
+                </tr>
+                {% empty %}
+                Aucun Arcticle
+                {% endfor %}
+                
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

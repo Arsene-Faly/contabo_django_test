@@ -1,0 +1,41 @@
+{% extends "layouts/admin.html" %}
+
+{% block title %}Nouvel article - Admin MonBlog{% endblock %}
+
+{% block content %}
+
+<div class="admin-main">
+
+<div class="admin-topbar">
+    <h1>Detail article</h1>
+
+    <div class="admin-user">
+        <span>Admin</span>
+        <div class="avatar">A</div>
+    </div>
+</div>
+
+<div class="admin-content">
+
+    <div class="panel" style="max-width:760px;">
+
+        <h2>Informations de l'article</h2>
+
+        {% if article.image %}
+            <img src="{{ article.image.url }}" width="100px" alt="{{ article.titre }}">
+        {% else %}
+        Tsisy image
+        {% endif %}
+
+        {{ article.titre }}
+        {{ article.resume }}
+        
+       
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}
